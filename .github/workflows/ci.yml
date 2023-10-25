@@ -20,7 +20,6 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # 工作1
 jobs:
-
   # 任务名称
   build:
     # 执行平台
@@ -28,16 +27,13 @@ jobs:
 
     # 任务步骤
     steps:
-      # 1 将代码仓库的内容拉取（或称为检出）到工作目录中，以便在下面的工作流程中使用
     - name: Checkout repository
       uses: actions/checkout@v2
 
-        # 2 安装 node 环境，并设置版本为 14
       - name: Setup Node.js (设置 node 版本)
        uses: actions/setup-node@v3
        with:
          node-version: 14
-      # 3 安装 yarn
      - name: Install dependencies
         run: yarn install
 
