@@ -35,7 +35,7 @@ jobs:
 
       - name: Show Deployed URL
         run: |
-          echo "Deployed Website URL: https://lzdml.github.io/high-star/"
+          echo "Deployed Website URL: https://zhunnlin.github.io/studyProject/"
 
       - name: Send email notification
         run: npm run start # 替换为发送邮件的脚本命令或代码
