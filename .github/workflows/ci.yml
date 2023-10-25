@@ -20,19 +20,17 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # 工作1
 jobs:
-  # This workflow contains a single job called "build"
+
   # 任务名称
   build:
-    # The type of runner that the job will run on
     # 执行平台
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     # 任务步骤
     steps:
       # 1 将代码仓库的内容拉取（或称为检出）到工作目录中，以便在下面的工作流程中使用
       - name: Checkout code (检出代码)
-       uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
         # 2 安装 node 环境，并设置版本为 16
       - name: Setup Node.js (设置 node 版本)
