@@ -40,11 +40,9 @@ jobs:
       # 3 安装 yarn
       - name: Install yarn (安装 yarn)
         uses: yarn/action-setup@v2
-        with:
-          version: 7.0.0
       # 4 安装依赖
-      - name: Install dependencies (安装依赖)
-        run: yarn install
+      # - name: Install dependencies (安装依赖)
+      #   run: yarn install
 
       # 5 代码检查，无该命令所以不执行
       # - name: lint (代码检查)
