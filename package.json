@@ -9,7 +9,7 @@
     "docs:serve": "vitepress serve docs",
     "start": "node send-email.js",
     "fetch": "node fetch.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vitepress build docs"
   },
   "keywords": [
     "nodemailer",
