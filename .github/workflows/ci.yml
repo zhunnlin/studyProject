@@ -1,43 +1,36 @@
 # This is a basic workflow to help you get started with Actions
 # 1 工作流名称
 name: CI
-# 2 工作流执行名称
 # run-name: ${{ github.actor }} is update repo, start building...
 # Controls when the workflow will run 触发器
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  # 推送
   push:
     branches: [ "main" ]
     # 合并提交
   pull_request:
     branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
-   # 允许您从“操作”选项卡手动运行此工作流
   workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-      - name: Setup Node.js (设置 node 版本)
+    - name: Setup Node.js (设置 node 版本)
        uses: actions/setup-node@v3
        with:
          node-version: 14
-     - name: Install dependencies
+    - name: Install dependencies
         run: yarn install
 
-      - name: Build (构建)
+    - name: Build (构建)
         run: pnpm run build
 
       # 4 上传构建产物（actions/upload-artifact@v3 会上传工作流程中的文件，允许您在作业之间共享数据并在工作流程完成后存储数据）
-      - name:  Upload build artifacts (上传构建产物)
+    - name:  Upload build artifacts (上传构建产物)
         uses: actions/upload-pages-artifact@v2
         with:
           path: "./dist"
