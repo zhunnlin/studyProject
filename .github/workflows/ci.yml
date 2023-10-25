@@ -1,36 +1,59 @@
 # This is a basic workflow to help you get started with Actions
-
+# 1 工作流名称
 name: CI
-
-# Controls when the workflow will run
+# 2 工作流执行名称
+run-name: ${{ github.actor }} is update repo, start building...
+# Controls when the workflow will run 触发器
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
+  # 推送
   push:
     branches: [ "main" ]
+    # 合并提交
   pull_request:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
+   # 允许您从“操作”选项卡手动运行此工作流
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# 工作1
 jobs:
   # This workflow contains a single job called "build"
+  # 任务名称
   build:
     # The type of runner that the job will run on
+    # 执行平台
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    # 任务步骤
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # 1 将代码仓库的内容拉取（或称为检出）到工作目录中，以便在下面的工作流程中使用
+      - name: Checkout code (检出代码)
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+        # 2 安装 node 环境，并设置版本为 16
+      - name: Setup Node.js (设置 node 版本)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      # 3 安装 pnpm
+      - name: Install pnpm (安装 pnpm)
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.0.0
+      # 4 安装依赖
+      - name: Install dependencies (安装依赖)
+        run: pnpm install
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+ # 7 构建项目
+      - name: Build (构建)
+        run: pnpm run build
+      # 8 上传构建产物（actions/upload-artifact@v3 会上传工作流程中的文件，允许您在作业之间共享数据并在工作流程完成后存储数据）
+      - name:  Upload build artifacts (上传构建产物)
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "./dist"
+
