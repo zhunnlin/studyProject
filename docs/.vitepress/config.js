@@ -6,7 +6,7 @@ var globalConfig = "GITHUB每日热榜";
 
 export default defineConfig({
   lang: "zh-CN",
-  base: "/high-star/",
+  base: "/studyProject/",
   appearance: true,
   title: globalConfig,
   description: "VitePress is a Vite-powered static site generator",
@@ -30,7 +30,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/lzdml",
+        link: "https://github.com/zhunnlin",
       },
     ],
     head: [
