@@ -33,6 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./docs/.vitepress/dist
+          pushlish_branch: main
 
       - name: Show Deployed URL
         run: |
