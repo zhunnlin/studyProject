@@ -40,13 +40,13 @@ jobs:
         run: |
           echo "Deployed Website URL: https://zhunnlin.github.io/studyProject/"
 
-      - name: Send email notification
-        run: npm run start # 替换为发送邮件的脚本命令或代码
-        env:
-          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-          SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+     # - name: Send email notification
+       # run: npm run start # 替换为发送邮件的脚本命令或代码
+        #env:
+         # SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          #SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
+         # SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+         # SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
 
   deploy:
     environment:
