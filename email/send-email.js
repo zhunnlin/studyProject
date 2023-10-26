@@ -1,8 +1,7 @@
 import nodemailer from "nodemailer"
 import fs from "fs"
 import path from "path"
-import { URL, fileURLToPath } from "url"
-console.log(process.argv.slice(-1))
+import {  fileURLToPath } from "url"
 const __filenameNew = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filenameNew)
 // // 配置您的邮箱信息

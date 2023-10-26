@@ -1,13 +1,20 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
-const fs = require("fs");
-const moment = require("moment");
-const path = require("path");
-const updateSidebarFile = require("./updateSidebar");
-
-require("moment/locale/zh-cn");
+// const axios = require("axios");
+// const cheerio = require("cheerio");
+// const fs = require("fs");
+// const moment = require("moment");
+// const path = require("path");
+// const updateSidebarFile = require("./updateSidebar");
+import axios from "axios"
+import cheerio from "cheerio"
+import fs from "fs"
+import moment from "moment"
+import path from "path"
+import path from "path"
+import 'moment/locale/zh-cn' 
 moment.locale("zh-cn");
-
+import {  fileURLToPath } from "url"
+const __filenameNew = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filenameNew)
 const trendingUrl = "https://github.com/trending/javascript?since=daily";
 
 axios.default.timeout = 10000;
