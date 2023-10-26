@@ -45,9 +45,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: email
-    
-     
-
+          
       - name: Show Deployed URL
         run: |
           echo "Deployed Website URL: https://zhunnlin.github.io/studyProject/"
@@ -62,7 +60,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2  
-        
+
       - name: send 163 email
         run: node ./email/send-email.js --a=${{env.SMTP_PASSWORD}}
         env:

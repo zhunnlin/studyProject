@@ -78,7 +78,7 @@
     <div class="envelope-content">
       <div class="verification-code">Your verification code: 123456</div>
       <div class="weather-info">
-        今天周五哈哈
+        {{today}}
       </div>
 
       <div>
@@ -88,7 +88,11 @@
   </div>
 
   <script>
+    import moment from "moment"
+    import 'moment/locale/zh-cn'
+    moment.locale("zh-cn");
     const info = document.querySelector(".weather-info");
+    const today = moment().format("YYYY-MM-DD HH:MM:SS")
   </script>
 </body>
 

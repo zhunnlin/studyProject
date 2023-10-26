@@ -1,9 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const moment = require("moment");
-require("moment/locale/zh-cn");
+import fs from "fs"
+import path from "path"
+import moment from "moment"
+import 'moment/locale/zh-cn' 
 moment.locale("zh-cn");
-
 function getSidebar(today = moment().format("YYYY-MM-DD")) {
   const sidebarItem = {
     text: today,

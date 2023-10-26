@@ -9,7 +9,6 @@ import cheerio from "cheerio"
 import fs from "fs"
 import moment from "moment"
 import path from "path"
-import path from "path"
 import 'moment/locale/zh-cn' 
 moment.locale("zh-cn");
 import {  fileURLToPath } from "url"
