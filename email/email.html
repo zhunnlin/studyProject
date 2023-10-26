@@ -78,7 +78,7 @@
     <div class="envelope-content">
       <div class="verification-code">Your verification code: 123456</div>
       <div class="weather-info">
-        {{today}}
+
       </div>
 
       <div>
@@ -93,6 +93,7 @@
     moment.locale("zh-cn");
     const info = document.querySelector(".weather-info");
     const today = moment().format("YYYY-MM-DD HH:MM:SS")
+    $("#info").text(today);
   </script>
 </body>
 
