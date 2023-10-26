@@ -12,10 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v3
         with:
           node-version: 18
 
@@ -25,12 +22,12 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run the scraper and generator # name后面的是当前任务的描述, 不需要管
-        run: node scraper.js # 替换为您的爬虫脚本的文件名
+      # - name: Run the scraper and generator # name后面的是当前任务的描述, 不需要管
+          #run: node scraper.js # 替换为您的爬虫脚本的文件名
 
-      - name: Build
+      - name: Build with VitePress
         run: yarn docs:build
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -55,3 +52,5 @@ jobs:
           SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+  
+ 
