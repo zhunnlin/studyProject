@@ -2,7 +2,7 @@ name: Web Scraping and Notification
 
 on:
   push:
-      branches: [ master ]
+      branches: [ main ]
   schedule: 
     - cron: "* 1 * * *"  #定时任务 用于9点定时触发 
 
