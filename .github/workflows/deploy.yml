@@ -42,9 +42,9 @@ jobs:
           path: docs/.vitepress/dist
 
       - name: Upload send-email.js
-          uses: actions/upload-pages-artifact@v2
-          with:
-            path: a
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: a
 
       - name: Show Deployed URL
         run: |
