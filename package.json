@@ -2,11 +2,13 @@
   "name": "time-task-to-markdown",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "send-email.js",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs",
     "start": "node send-email.js",
     "fetch": "node fetch.js"
   },
@@ -17,8 +19,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.9",
-    "vue": "3.2.37"
+    "vitepress": "1.0.0-rc.22",
+    "vue": "3.3.7"
   },
   "dependencies": {
     "@algolia/client-search": ">=4.9.1 <6.0.01",
