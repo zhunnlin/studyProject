@@ -2,7 +2,7 @@ name: Web Scraping and Notification
 
 on:
   push:
-      branches: [ gh-pages ]
+      branches: [ main ]
   schedule: 
     - cron: "* 1 * * *"  #定时任务 用于9点定时触发 
 
@@ -39,7 +39,6 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./docs/.vitepress/dist
-          publish_branch: main
 
       - name: Show Deployed URL
         run: |
@@ -52,15 +51,3 @@ jobs:
           SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-  deploy:
-    environment:
-      name: github-pages
-      url: https://zhunnlin.github.io/studyProject/
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
- 
