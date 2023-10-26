@@ -52,5 +52,15 @@ jobs:
           SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-  
+  deploy:
+    environment:
+      name: github-pages
+      url: https://zhunnlin.github.io/studyProject/
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
  
