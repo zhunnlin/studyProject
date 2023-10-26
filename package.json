@@ -9,8 +9,7 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "send:email": "node ./email/send-email.js",
-    "fetch": "node fetch.js"
+    "send:email": "node ./email/send-email.js"
   },
   "keywords": [
     "nodemailer",

@@ -70,7 +70,7 @@ jobs:
         uses: actions/deploy-pages@v2  
 
       - name: send 163 email
-        run: yarn send:email
+        run: yarn run send:email
         env:
           SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
           SMTP_SEND_TO: ${{ secrets.SMTP_SEND_TO }}
