@@ -1,7 +1,9 @@
 name: Web Scraping and Notification
 
 on:
-  schedule:
+  push:
+      branches: [ gh-pages ]
+  schedule: 
     - cron: "* 1 * * *"  #定时任务 用于9点定时触发 
 
 jobs:
