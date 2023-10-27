@@ -27,7 +27,7 @@ const mailOptions = {
   attachments: []//附件
 };
 
-// 定时任务
+//发送邮件的方法
 transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
     console.error("Error sending email:", error);
