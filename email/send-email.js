@@ -4,7 +4,8 @@ import path from "path"
 import { fileURLToPath } from "url"
 const __filenameNew = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filenameNew)
-console.log(__dirname, "111")
+console.log(__dirname, "11132")
+
 // // 配置您的邮箱信息
 const transporter = nodemailer.createTransport({
   host: 'smtp.163.com',//process.env.SMTP_SERVER,//代表邮箱的主机：163邮箱是'smtp.163.com' qq是'smtp.qq.com'
