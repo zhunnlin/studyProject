@@ -1,9 +1,3 @@
-// const axios = require("axios");
-// const cheerio = require("cheerio");
-// const fs = require("fs");
-// const moment = require("moment");
-// const path = require("path");
-// const updateSidebarFile = require("./updateSidebar");
 import axios from "axios"
 import cheerio from "cheerio"
 import fs from "fs"

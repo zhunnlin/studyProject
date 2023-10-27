@@ -1,8 +1,11 @@
 import fs from "fs"
 import path from "path"
 import moment from "moment"
-import 'moment/locale/zh-cn' 
+import 'moment/locale/zh-cn'
 moment.locale("zh-cn");
+import { fileURLToPath } from "url"
+const __filenameNew = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filenameNew)
 function getSidebar(today = moment().format("YYYY-MM-DD")) {
   const sidebarItem = {
     text: today,
